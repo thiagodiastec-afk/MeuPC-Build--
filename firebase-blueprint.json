@@ -1,0 +1,25 @@
+{
+  "schemas": {
+    "users": {
+      "type": "document",
+      "description": "User profile document",
+      "fields": {
+        "email": "string",
+        "displayName": "string"
+      },
+      "subcollections": {
+        "builds": {
+          "type": "document",
+          "description": "User's saved PC builds",
+          "fields": {
+            "id": "string",
+            "name": "string",
+            "totalPrice": "number",
+            "updatedAt": "string",
+            "components": "map"
+          }
+        }
+      }
+    }
+  }
+}

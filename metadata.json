@@ -1,0 +1,6 @@
+{
+  "name": "MeuPC Build - Montador de PC & Compatibilidade",
+  "description": "Monte seu computador personalizado, verifique compatibilidade de peças em tempo real, calcule potência e compare preços em lojas do Brasil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

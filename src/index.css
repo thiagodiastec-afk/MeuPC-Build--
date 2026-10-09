@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-panel {
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-header {
+    background-color: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-input {
+    background-color: rgba(2, 6, 23, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ==========================================================================
+   PRINT SPECIFIC STYLES (@media print)
+   Garante formatação profissional, clara e sem desperdício de tinta
+   ========================================================================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+
+  *, *::before, *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Ocultar elementos interativos, modais, decorações e botões na impressão */
+  .no-print,
+  .ambient-glow,
+  [role="dialog"],
+  .fixed.inset-0,
+  button,
+  .tips-banner,
+  .quick-tips-guide,
+  .game-builder-banner,
+  .header-actions-bar,
+  .floating-assistant-btn {
+    display: none !important;
+  }
+
+  /* Exibir cabeçalho e rodapé exclusivos para impressão */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Layout principal em fluxo vertical de página inteira */
+  main {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .grid {
+    display: block !important;
+  }
+
+  .lg\:col-span-8, .lg\:col-span-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Estilização da Tabela de Peças para Impressão */
+  .print-table-container {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    margin-bottom: 16px !important;
+    overflow: visible !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+    background-color: #f1f5f9 !important;
+  }
+
+  thead th {
+    color: #1e293b !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    padding: 8px 10px !important;
+    border-bottom: 2px solid #94a3b8 !important;
+    text-transform: uppercase !important;
+  }
+
+  tbody tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f8fafc !important;
+  }
+
+  tbody td {
+    padding: 8px 10px !important;
+    color: #1e293b !important;
+    font-size: 9pt !important;
+    vertical-align: middle !important;
+  }
+
+  /* Ocultar linhas de componentes não preenchidos na impressão */
+  tr.print-empty-row {
+    display: none !important;
+  }
+
+  /* Ocultar colunas de ações */
+  th.print-hide-col, td.print-hide-col {
+    display: none !important;
+  }
+
+  /* Forçar visualização da coluna 'A Prazo' na impressão */
+  th.print-show-col, td.print-show-col {
+    display: table-cell !important;
+  }
+
+  /* Imagens dos componentes na impressão */
+  .print-component-img {
+    width: 32px !important;
+    height: 32px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4px !important;
+  }
+
+  /* Badges de especificações */
+  .print-spec-badge {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border: 1px solid #cbd5e1 !important;
+    font-size: 7.5pt !important;
+    padding: 1px 4px !important;
+    border-radius: 3px !important;
+    display: inline-block !important;
+  }
+
+  /* Textos de Preço em Destaque */
+  .print-price-cash {
+    color: #0369a1 !important;
+    font-weight: 700 !important;
+    font-size: 9.5pt !important;
+  }
+
+  .print-price-inst {
+    color: #475569 !important;
+    font-size: 8pt !important;
+  }
+
+  /* Card de Resumo de Preços na Impressão */
+  .print-summary-card {
+    position: static !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 14px !important;
+    margin-top: 16px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-summary-box {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .print-total-cash {
+    color: #0369a1 !important;
+    font-size: 16pt !important;
+    font-weight: 900 !important;
+  }
+
+  .print-total-inst {
+    color: #1e293b !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+  }
+
+  /* Rodapé e cabeçalho de impressão com paginação */
+  .print-footer-info {
+    margin-top: 20px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid #cbd5e1 !important;
+    font-size: 8pt !important;
+    color: #64748b !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+}
+

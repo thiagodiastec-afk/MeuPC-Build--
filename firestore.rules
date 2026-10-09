@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      match /builds/{buildId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    match /components/{componentId} {
+      // Allow everyone to read the components catalog
+      allow read: if true;
+      // ALERTA: Em produção real (com firebase-admin no backend), usar "allow write: if false;"
+      // Permitimos if true temporariamente para o Robô MVP que roda sem Service Account.
+      allow write: if true; 
+    }
+  }
+}

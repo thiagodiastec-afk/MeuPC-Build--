@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Suprime avisos benignos de WebSocket do Vite (HMR propositalmente desativado na plataforma)
+      window.addEventListener('unhandledrejection', function(event) {
+        var msg = event?.reason?.message || String(event?.reason || '');
+        if (msg.toLowerCase().includes('websocket')) {
+          event.preventDefault();
+          if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+        }
+      });
+      window.addEventListener('error', function(event) {
+        var msg = event?.message || '';
+        if (typeof msg === 'string' && msg.toLowerCase().includes('websocket')) {
+          event.preventDefault();
+          if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+        }
+      });
+    </script>
+    <title>MeuPC Build - Montador de PC & Compatibilidade</title>
+    <meta name="description" content="Monte seu computador personalizado, verifique compatibilidade de peças em tempo real, calcule potência e compare preços em lojas do Brasil." />
+    <meta property="og:title" content="MeuPC Build - Montador de PC & Compatibilidade" />
+    <meta property="og:description" content="Monte seu computador personalizado, verifique compatibilidade de peças em tempo real, calcule potência e compare preços em lojas do Brasil." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

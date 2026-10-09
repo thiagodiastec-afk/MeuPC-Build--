@@ -1,0 +1,111 @@
+import { ComponentCategory } from '../types/pc';
+
+export const POPULAR_CATEGORY_SUGGESTIONS: Record<ComponentCategory, string[]> = {
+  cpu: [
+    'Ryzen 5 5600',
+    'Core i5-12400F',
+    'Ryzen 7 5700X3D',
+    'Ryzen 5 7600',
+    'Core i5-13400F',
+    'Ryzen 7 7800X3D',
+  ],
+  gpu: [
+    'RTX 4060 8GB',
+    'RX 6600 8GB',
+    'RTX 4060 Ti 8GB',
+    'RX 6750 XT 12GB',
+    'RTX 4070 Super 12GB',
+    'RX 7600 8GB',
+  ],
+  motherboard: [
+    'MSI B550M PRO-VDH WiFi',
+    'Gigabyte B550M Aorus Elite',
+    'ASUS Prime B650M-A AM5',
+    'MSI PRO H610M-E LGA1700',
+    'ASRock B450M-HDV',
+    'ASUS TUF Gaming B760M-Plus',
+  ],
+  ram: [
+    '16GB (2x8GB) DDR4 3200MHz',
+    '32GB (2x16GB) DDR4 3200MHz',
+    '32GB (2x16GB) DDR5 6000MHz',
+    '16GB (1x16GB) DDR4 3200MHz',
+    '16GB (1x16GB) DDR5 5600MHz',
+  ],
+  storage: [
+    'SSD Kingston NV2 1TB NVMe M.2',
+    'SSD Crucial P3 Plus 1TB NVMe',
+    'SSD Kingston NV2 500GB NVMe',
+    'SSD Kingston KC3000 1TB NVMe',
+    'SSD Crucial P3 2TB NVMe M.2',
+  ],
+  psu: [
+    'Fonte MSI MAG A650BN 650W',
+    'Fonte Corsair CV550 550W',
+    'Fonte Corsair RM750e 750W Gold',
+    'Fonte Super Flower 850W Gold',
+    'Fonte Gamemax GP650 650W Bronze',
+  ],
+  case: [
+    'Gabinete Montech Air 903 Max',
+    'Gabinete Pichau HX300 Glass',
+    'Gabinete Redragon Wheeljack',
+    'Gabinete Aquário Rise Mode Galaxy',
+    'Gabinete Corsair 4000D Airflow',
+  ],
+  cooler: [
+    'Air Cooler DeepCool AK400',
+    'Thermalright Peerless Assassin 120',
+    'Water Cooler Rise Mode 240mm',
+    'Water Cooler DeepCool LT720 360mm',
+    'Air Cooler Rise Mode G700',
+  ],
+  monitor: [
+    'Monitor LG UltraGear 24 144Hz IPS',
+    'Monitor LG UltraGear 27 180Hz IPS',
+    'Monitor AOC Hero 24 144Hz IPS',
+    'Monitor AOC Hero 27 QHD 155Hz',
+    'Monitor Samsung Odyssey G32 165Hz',
+  ],
+  case_fan: [
+    'Kit 3 Fans Rise Mode Laser ARGB 120mm',
+    'Kit 4 Fans Aigo Darkflash ARGB 120mm',
+    'Fan DeepCool FK120 120mm PWM',
+  ],
+  keyboard: [
+    'Teclado Mecânico Redragon Kumara Switch Red',
+    'Teclado Mecânico Attack Shark K86 Sem Fio',
+    'Teclado Gamer HyperX Alloy Origins',
+  ],
+  mouse: [
+    'Mouse Gamer Logitech G203 Lightsync',
+    'Mouse Gamer Razer DeathAdder Essential',
+    'Mouse Gamer Attack Shark X3 Sem Fio',
+    'Mouse Gamer Logitech G305 Sem Fio',
+  ],
+  headset: [
+    'Headset Gamer Havit H2002D',
+    'Headset HyperX Cloud Stinger 2',
+    'Headset Redragon Zeus X 7.1',
+  ],
+  mousepad: [
+    'Mousepad Gamer Speed Extra Grande 900x400mm',
+    'Mousepad Redragon Suzaku 800x300mm',
+    'Mousepad Fallen Speed++ Grande',
+  ],
+  microphone: [
+    'Microfone Fifine AmpliGame A6V USB',
+    'Microfone Redragon Seyfert USB com Tripé',
+    'Microfone HyperX QuadCast S RGB',
+  ],
+  chair: [
+    'Cadeira Gamer ThunderX3 TC3',
+    'Cadeira Gamer DT3 Sports Elise',
+    'Cadeira de Escritório Ergonômica Mesh Comfy',
+  ],
+  os: [
+    'Windows 11 Home 64-bit',
+    'Windows 11 Pro 64-bit',
+    'Ubuntu Linux LTS',
+  ],
+};
